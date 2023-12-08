@@ -1,0 +1,38 @@
+{
+	"name": "astrokit",
+	"version": "1.0.0",
+	"description": "Astro builder kit",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "pnpm --filter %1 dev",
+		"dev:overlay": "pnpm --filter overlay dev",
+		"dev:website": "pnpm --filter website dev",
+		"dev:playground": "pnpm --filter astro-playground dev",
+		"build": "pnpm --filter=!astro-playground --parallel -r run build",
+		"preview": "pnpm -r run preview",
+		"lint": "eslint . --cache --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preinstall": "npx only-allow pnpm",
+		"XXX_postinstall": "simple-git-hooks",
+		"format": "prettier --write --cache .",
+		"XXX_test": "pnpm -r --stream --parallel run test",
+		"XXX_test:e2e": "pnpm -r --stream --parallel run test:e2e",
+		"XXX_test:ci": "CI=true pnpm -r run test:ci",
+		"XXX_test:e2e:ci": "CI=true pnpm -r run test:e2e:ci",
+		"yalc:publish": "yalc publish --push --sig --private",
+		"XXX_changeset:add": "pnpm changeset",
+		"XXX_changeset:consume": "pnpm changeset version",
+		"XXX_changeset:publish": "pnpm run build && pnpm changeset publish",
+		"clean": "pnpm -r run clean",
+		"clean:deps": "rimraf -g packages/*/node_modules apps/*/node_modules apps/*/dist node_modules",
+		"clean:all": "pnpm run clean && pnpm run clean:deps && pnpm install"
+	},
+	"keywords": [],
+	"author": "jllahi",
+	"license": "ISC",
+	"packageManager": "pnpm@8.11.0",
+	"devDependencies": {
+		"rimraf": "^5.0.5",
+		"typescript": "^5.3.3"
+	}
+}
