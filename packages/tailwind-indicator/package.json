@@ -1,0 +1,35 @@
+{
+	"name": "@astrokit/tailwind-indicator",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"exports": {
+		".": "./index.ts",
+		"./base.css": "./base.css",
+		"./TailwindIndicator.astro": "./src/TailwindIndicator.astro"
+	},
+	"files": [
+		"src",
+		"index.ts",
+		"base.css"
+	],
+	"keywords": [
+		"withastro",
+		"astro-component",
+		"tailwind"
+	],
+	"scripts": {
+		"build": "astro check && astro build && tsc"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"astro": "^4.0.3",
+		"@astrojs/tailwind": "^5.0.3",
+		"tailwindcss": "^3.3.6"
+	},
+	"peerDependencies": {
+		"astro": "^3.0.0 || ^4.0.0",
+		"@astrojs/tailwind": "^5.0.3",
+		"tailwindcss": "^3.3.6"
+	}
+}
